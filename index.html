@@ -467,10 +467,10 @@
 
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting) {
-                    animateCounter(lifeExpectancyEl, 0, 7.13 * 100, 2000, '');
+                    animateCounter(lifeExpectancyEl, 0, 7.13, 2000, '');
                     lifeExpectancyEl.innerHTML = `+${(7.13).toFixed(2)}`;
                     
-                    animateCounter(costReductionEl, 0, -28.12 * 100, 2000, '');
+                    animateCounter(costReductionEl, 0, -28.12, 2000, '');
                     costReductionEl.innerHTML = `-${(28.12).toFixed(2)}%`;
                     
                     observer.disconnect();
