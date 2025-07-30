@@ -309,6 +309,16 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Set default values immediately in case animations fail
+            const lifeExpectancyElement = document.getElementById('lifeExpectancyCounter');
+            const costReductionElement = document.getElementById('costReductionCounter');
+            
+            if (lifeExpectancyElement) {
+                lifeExpectancyElement.innerHTML = `+${(7.13).toFixed(2)}`;
+            }
+            if (costReductionElement) {
+                costReductionElement.innerHTML = `-${(28.12).toFixed(2)}%`;
+            }
             
             const createMortalityChart = () => {
                 const ctx = document.getElementById('mortalityChart').getContext('2d');
@@ -495,11 +505,24 @@
 
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting) {
-                    animateCounter(lifeExpectancyEl, 0, 7.13, 2000, '');
+                    // Set the final values directly to ensure they display correctly
                     lifeExpectancyEl.innerHTML = `+${(7.13).toFixed(2)}`;
-                    
-                    animateCounter(costReductionEl, 0, -28.12, 2000, '');
                     costReductionEl.innerHTML = `-${(28.12).toFixed(2)}%`;
+                    
+                    // Try to animate if possible (might fail if Chart.js errors prevent it)
+                    try {
+                        animateCounter(lifeExpectancyEl, 0, 7.13, 2000, '');
+                        setTimeout(() => {
+                            lifeExpectancyEl.innerHTML = `+${(7.13).toFixed(2)}`;
+                        }, 2100);
+                        
+                        animateCounter(costReductionEl, 0, -28.12, 2000, '');
+                        setTimeout(() => {
+                            costReductionEl.innerHTML = `-${(28.12).toFixed(2)}%`;
+                        }, 2100);
+                    } catch (e) {
+                        // Animation failed, but values are already set above
+                    }
                     
                     observer.disconnect();
                 }
