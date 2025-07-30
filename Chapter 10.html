@@ -58,6 +58,30 @@
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
+        .chapter-nav-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px -3px rgba(0, 0, 0, 0.1), 0 8px 12px -2px rgba(0, 0, 0, 0.08);
+        }
+        .chapter-nav-card:hover::before {
+            transform: scaleX(1);
+        }
+        .chapter-nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-color-light));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -71,6 +95,47 @@
             <p class="mt-2 text-lg text-gray-600">Addressing the independent health risks of prolonged sitting.</p>
         </div>
     </header>
+
+    <nav class="bg-gray-50 py-8 border-b">
+        <div class="container mx-auto px-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">Chapter Navigation</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                <a href="index.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-blue-500" style="--accent-color: #3b82f6; --accent-color-light: #60a5fa;">
+                    <div class="font-semibold text-gray-800 text-base">Lifestyle Medicine: A Strategic Approach to Mitigate Chronic Disease Burden in Taiwan</div>
+                </a>
+                <a href="Chapter 2.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-teal-500" style="--accent-color: #14b8a6; --accent-color-light: #2dd4bf;">
+                    <div class="font-semibold text-gray-800 text-base">Lifestyle Medicine Assessment Tools</div>
+                </a>
+                <a href="Chapter 3.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-green-500" style="--accent-color: #10b981; --accent-color-light: #34d399;">
+                    <div class="font-semibold text-gray-800 text-base">Physiological Parameters and Biomarkers in Lifestyle Medicine</div>
+                </a>
+                <a href="Chapter 4.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-yellow-500" style="--accent-color: #eab308; --accent-color-light: #facc15;">
+                    <div class="font-semibold text-gray-800 text-base">Healthy Eating: A Cornerstone of Lifestyle Medicine</div>
+                </a>
+                <a href="Chapter 5.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-orange-500" style="--accent-color: #f97316; --accent-color-light: #fb923c;">
+                    <div class="font-semibold text-gray-800 text-base">Physical Activity: Taiwan's Movement Challenge</div>
+                </a>
+                <a href="Chapter 6.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-red-500" style="--accent-color: #ef4444; --accent-color-light: #f87171;">
+                    <div class="font-semibold text-gray-800 text-base">Restorative Sleep: Taiwan's Sleep Crisis</div>
+                </a>
+                <a href="Chapter 7.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-purple-500" style="--accent-color: #8b5cf6; --accent-color-light: #a78bfa;">
+                    <div class="font-semibold text-gray-800 text-base">Stress Management: Taiwan's Cultural Approach</div>
+                </a>
+                <a href="Chapter 8.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-pink-500" style="--accent-color: #ec4899; --accent-color-light: #f472b6;">
+                    <div class="font-semibold text-gray-800 text-base">Avoidance of Risky Substances: Taiwan's Unique Challenges</div>
+                </a>
+                <a href="Chapter 9.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-indigo-500" style="--accent-color: #6366f1; --accent-color-light: #818cf8;">
+                    <div class="font-semibold text-gray-800 text-base">Positive Social Connection: Taiwan's Changing Society</div>
+                </a>
+                <a href="Chapter 10.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-cyan-500" style="--accent-color: #06b6d4; --accent-color-light: #22d3ee;">
+                    <div class="font-semibold text-gray-800 text-base">Sedentary Behaviors in Lifestyle Medicine: Taiwanese Perspective</div>
+                </a>
+                <a href="Chapter 11.html" class="chapter-nav-card bg-white p-5 rounded-lg shadow-sm text-center border-l-4 border-gray-500" style="--accent-color: #6b7280; --accent-color-light: #9ca3af;">
+                    <div class="font-semibold text-gray-800 text-base">Impact of Shift Work on Health and Coping Strategies</div>
+                </a>
+            </div>
+        </div>
+    </nav>
 
     <main class="container mx-auto p-4 md:p-8">
         
