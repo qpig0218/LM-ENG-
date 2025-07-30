@@ -116,10 +116,13 @@
         .chapter-nav-container::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
-        .chapter-nav-card {
-            display: inline-block;
+                .chapter-nav-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             white-space: normal;
-            vertical-align: top;
             min-width: 200px;
             max-width: 250px;
             margin-right: 12px;
@@ -350,7 +353,7 @@
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md cursor-pointer tool-card" data-tool="help-t">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Health Enhancement Lifestyle Profile (HELP) & HELP-T</h3>
-                    <p class="text-600 text-sm">Designed for older adults, with a specific Taiwanese adaptation.</p>
+                    <p class="text-gray-600 text-sm">Designed for older adults, with a specific Taiwanese adaptation.</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md cursor-pointer tool-card" data-tool="hlpcq">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Healthy Lifestyle and Personal Control Questionnaire (HLPCQ)</h3>
